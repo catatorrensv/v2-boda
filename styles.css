@@ -137,7 +137,9 @@
     /* Hero (vídeo o imagen) */
     .hero{
       position:relative;
-      min-height: 100svh;
+    /*  min-height: 100svh; */
+      min-height: 100vh;
+     min-height: 100dvh;
       display:flex;
       flex-direction:column;
       overflow:hidden;
@@ -389,6 +391,7 @@
     height: 30px;
   }
 }
+
 
     /* Venue */
     .venue-wrap{

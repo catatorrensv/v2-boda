@@ -48,31 +48,34 @@
 
 		<!-- 2) COUNTDOWN -->
 		<section class="section paper" id="countdown">
-			<div class="container">
-				<h2 class="title font-display">Cuenta atrás</h2>
-				<div class="countdown" aria-label="Cuenta atrás">
-					<div class="count-item">
-						<div class="count-num font-serif" id="cdDays">--</div>
-						<div class="count-lbl font-body">Días</div>
-					</div>
-					<div class="count-sep" aria-hidden="true"></div>
-					<div class="count-item">
-						<div class="count-num font-serif" id="cdHours">--</div>
-						<div class="count-lbl font-body">Horas</div>
-					</div>
-					<div class="count-sep" aria-hidden="true"></div>
-					<div class="count-item">
-						<div class="count-num font-serif" id="cdMins">--</div>
-						<div class="count-lbl font-body">Minutos</div>
-					</div>
-                    <div class="count-sep" aria-hidden="true"></div>
-                    <div class="count-item">
-                        <div class="count-num font-serif" id="cdSecs">--</div>
-                        <div class="count-lbl font-body">Segundos</div>
-                    </div>
-				</div>
-			</div>
-		</section>
+        <div class="container">
+<h2 class="title font-display" id="countdownTitle">Cuenta atrás para el gran día</h2>
+            <div class="countdown" id="countdownBox" aria-label="Cuenta atrás">
+            <div class="count-item">
+                <div class="count-num font-serif" id="cdDays">--</div>
+                <div class="count-lbl font-body">Días</div>
+            </div>
+            <div class="count-sep" aria-hidden="true"></div>
+
+            <div class="count-item">
+                <div class="count-num font-serif" id="cdHours">--</div>
+                <div class="count-lbl font-body">Horas</div>
+            </div>
+            <div class="count-sep" aria-hidden="true"></div>
+
+            <div class="count-item">
+                <div class="count-num font-serif" id="cdMins">--</div>
+                <div class="count-lbl font-body">Minutos</div>
+            </div>
+            <div class="count-sep" aria-hidden="true"></div>
+
+            <div class="count-item">
+                <div class="count-num font-serif" id="cdSecs">--</div>
+                <div class="count-lbl font-body">Segundos</div>
+            </div>
+            </div>
+        </div>
+        </section>
 
 		<!-- 3) UBICACIÓN + MAPA -->
 		<section class="section venue-wrap" id="venue">
@@ -383,43 +386,60 @@
 
 		<script>
 			/***************
-            * COUNTDOWN
-            ***************/
-            const eventISO = "2026-06-20T19:30:00";
-            const target = new Date(eventISO).getTime();
+ * COUNTDOWN
+ ***************/
+const eventISO = "2026-06-20T19:30:00";
 
-            const $d = document.getElementById("cdDays");
-            const $h = document.getElementById("cdHours");
-            const $m = document.getElementById("cdMins");
-            const $s = document.getElementById("cdSecs");
+/*const target = new Date(eventISO).getTime();
+*/
+const target = Date.now() + 10000; // 10 segundos desde ahora
 
-            function pad2(n) {
-            return String(n).padStart(2, "0");
-            }
+const $countdownBox = document.getElementById("countdownBox");
+const $message = document.getElementById("countdownMessage");
+const $title = document.getElementById("countdownTitle");
 
-            function tick() {
-            const now = Date.now();
-            let diff = Math.max(0, target - now);
+const $d = document.getElementById("cdDays");
+const $h = document.getElementById("cdHours");
+const $m = document.getElementById("cdMins");
+const $s = document.getElementById("cdSecs");
 
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            diff -= days * (1000 * 60 * 60 * 24);
+function pad2(n) {
+  return String(n).padStart(2, "0");
+}
 
-            const hours = Math.floor(diff / (1000 * 60 * 60));
-            diff -= hours * (1000 * 60 * 60);
+function tick() {
+  const now = Date.now();
+  let diff = target - now;
 
-            const mins = Math.floor(diff / (1000 * 60));
-            diff -= mins * (1000 * 60);
+  if (diff <= 0) {
+    $title.textContent = "¡Ya ha llegado el gran día!";
+    $d.textContent = "00";
+    $h.textContent = "00";
+    $m.textContent = "00";
+    $s.textContent = "00";
+    clearInterval(timer);
+    return;
+  }
 
-            const secs = Math.floor(diff / 1000);
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  diff -= days * (1000 * 60 * 60 * 24);
 
-            $d.textContent = days;
-            $h.textContent = pad2(hours);
-            $m.textContent = pad2(mins);
-            $s.textContent = pad2(secs);
-            }
+  const hours = Math.floor(diff / (1000 * 60 * 60));
+  diff -= hours * (1000 * 60 * 60);
 
-            tick();
-            setInterval(tick, 1000);
+  const mins = Math.floor(diff / (1000 * 60));
+  diff -= mins * (1000 * 60);
+
+  const secs = Math.floor(diff / 1000);
+
+  $d.textContent = pad2(days);
+  $h.textContent = pad2(hours);
+  $m.textContent = pad2(mins);
+  $s.textContent = pad2(secs);
+}
+
+tick();
+const timer = setInterval(tick, 1000);
 			
 			/***************
 			 * SCROLL CTA HERO
