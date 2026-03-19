@@ -50,7 +50,6 @@
 		<section class="section paper" id="countdown">
 			<div class="container">
 				<h2 class="title font-display">Cuenta atrás</h2>
-				<p class="subtitle font-body countdown-subtitle">Hasta el 20 de junio de 2026</p>
 				<div class="countdown" aria-label="Cuenta atrás">
 					<div class="count-item">
 						<div class="count-num font-serif" id="cdDays">--</div>
@@ -66,6 +65,11 @@
 						<div class="count-num font-serif" id="cdMins">--</div>
 						<div class="count-lbl font-body">Minutos</div>
 					</div>
+                    <div class="count-sep" aria-hidden="true"></div>
+                    <div class="count-item">
+                        <div class="count-num font-serif" id="cdSecs">--</div>
+                        <div class="count-lbl font-body">Segundos</div>
+                    </div>
 				</div>
 			</div>
 		</section>
@@ -379,38 +383,43 @@
 
 		<script>
 			/***************
-			 * COUNTDOWN
-			 ***************/
-			const eventISO = "2026-06-20T19:30:00";
-			const target = new Date(eventISO).getTime();
-			
-			const $d = document.getElementById("cdDays");
-			const $h = document.getElementById("cdHours");
-			const $m = document.getElementById("cdMins");
-			
-			function pad2(n) {
-			  return String(n).padStart(2, "0");
-			}
-			
-			function tick() {
-			  const now = Date.now();
-			  let diff = Math.max(0, target - now);
-			
-			  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-			  diff -= days * (1000 * 60 * 60 * 24);
-			
-			  const hours = Math.floor(diff / (1000 * 60 * 60));
-			  diff -= hours * (1000 * 60 * 60);
-			
-			  const mins = Math.floor(diff / (1000 * 60));
-			
-			  $d.textContent = days;
-			  $h.textContent = pad2(hours);
-			  $m.textContent = pad2(mins);
-			}
-			
-			tick();
-			setInterval(tick, 1000);
+            * COUNTDOWN
+            ***************/
+            const eventISO = "2026-06-20T19:30:00";
+            const target = new Date(eventISO).getTime();
+
+            const $d = document.getElementById("cdDays");
+            const $h = document.getElementById("cdHours");
+            const $m = document.getElementById("cdMins");
+            const $s = document.getElementById("cdSecs");
+
+            function pad2(n) {
+            return String(n).padStart(2, "0");
+            }
+
+            function tick() {
+            const now = Date.now();
+            let diff = Math.max(0, target - now);
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            diff -= days * (1000 * 60 * 60 * 24);
+
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            diff -= hours * (1000 * 60 * 60);
+
+            const mins = Math.floor(diff / (1000 * 60));
+            diff -= mins * (1000 * 60);
+
+            const secs = Math.floor(diff / 1000);
+
+            $d.textContent = days;
+            $h.textContent = pad2(hours);
+            $m.textContent = pad2(mins);
+            $s.textContent = pad2(secs);
+            }
+
+            tick();
+            setInterval(tick, 1000);
 			
 			/***************
 			 * SCROLL CTA HERO
