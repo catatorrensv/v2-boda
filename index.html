@@ -390,9 +390,9 @@
  ***************/
 const eventISO = "2026-06-20T19:30:00";
 
-/*const target = new Date(eventISO).getTime();
-*/
-const target = Date.now() + 10000; // 10 segundos desde ahora
+const target = new Date(eventISO).getTime();
+
+// const target = Date.now() + 10000; // 10 segundos desde ahora 
 
 const $countdownBox = document.getElementById("countdownBox");
 const $message = document.getElementById("countdownMessage");
