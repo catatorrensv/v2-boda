@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="es" translate="no">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css">
+		<title>Boda · Invitación</title>
+
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="test.png">
+
+		<meta name="google" content="notranslate" />
+		<meta name="description" content="Invitación de boda" />
+		<!-- Fuentes parecidas -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<!-- HERO -->
+		<header class="hero" id="top">
+			<div class="media">
+				<img src="fondo-finca.jpeg" alt="" />
+				<div class="overlay"></div>
+			</div>
+			<div class="content container">
+				<div class="hero-top">
+					<p class="hero-kicker font-body">¡Nos casamos!</p>
+          <br>
+					<h1 class="hero-names" aria-label="Nombres">
+						<span class="name font-names">Inma</span>
+						<span class="amp font-serif">&</span>
+						<span class="name font-names">Miquel</span>
+					</h1>
+				</div>
+				<div class="hero-bottom">
+					<div class="hero-divider" aria-hidden="true">
+						<span></span><span>✦</span><span></span>
+					</div>
+					<p class="hero-date font-body">20 JUNIO 2026</p>
+				</div>
+				<div class="hero-rsvp" id="heroScroll">
+					<small class="font-body">RSVP</small>
+					<div class="chev" aria-hidden="true"></div>
+				</div>
+			</div>
+		</header>
+
+		<!-- 2) COUNTDOWN -->
+		<section class="section paper" id="countdown">
+			<div class="container">
+				<h2 class="title font-display">Cuenta atrás</h2>
+				<p class="subtitle font-body countdown-subtitle">Hasta el 20 de junio de 2026</p>
+				<div class="countdown" aria-label="Cuenta atrás">
+					<div class="count-item">
+						<div class="count-num font-serif" id="cdDays">--</div>
+						<div class="count-lbl font-body">Días</div>
+					</div>
+					<div class="count-sep" aria-hidden="true"></div>
+					<div class="count-item">
+						<div class="count-num font-serif" id="cdHours">--</div>
+						<div class="count-lbl font-body">Horas</div>
+					</div>
+					<div class="count-sep" aria-hidden="true"></div>
+					<div class="count-item">
+						<div class="count-num font-serif" id="cdMins">--</div>
+						<div class="count-lbl font-body">Minutos</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- 3) UBICACIÓN + MAPA -->
+		<section class="section venue-wrap" id="venue">
+			<div class="container">
+				<h2 class="title font-display">¿Dónde celebramos?</h2>
+			<!--	<p class="subtitle font-body">¿Dónde celebramos?</p> -->
+				<div class="venue-card">
+					<img class="venue-img" id=venueImage src="dibujo-finca.png" alt="Finca" loading="lazy" />
+					<h3 class="venue-name font-display">Vandelvira La Finca</h3>
+			
+        <div class="venue-meta">
+          <span class="meta-text" id="venueDate">20 junio 2026</span>
+          <span class="dot">·</span>
+          <span class="meta-text" id="venueTime">19:30</span>
+        </div>
+
+        <div class="line" style="margin:16px auto;"></div>
+
+        <p class="addr font-body" id="venueAddress">
+          Cortijo Gil de Olid
+          <br>
+          23440 Puente del Obispo, Jaén<br/>
+        </p>
+
+        <div class="map-box">
+  <iframe
+    class="map"
+    id="mapFrame"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps?q=37.9425181,-3.5452957&output=embed"
+    title="Mapa de la ubicación de la boda"
+  ></iframe>
+</div>
+
+        <div class="venue-actions">
+  <a
+    class="maps-link"
+    id="mapsLink"
+    target="_blank"
+    rel="noopener noreferrer"
+    href="https://www.google.com/maps/place/Vandelvira+La+Finca/@37.9425181,-3.5452957,17z/data=!3m1!4b1!4m6!3m5!1s0xd6e89b2d2d91dab:0xf8d4b6ffa64ac603!8m2!3d37.9425181!4d-3.5452957!16s%2Fg%2F11wft8k1np?entry=ttu&g_ep=EgoyMDI2MDMwNC4xIKXMDSoASAFQAw%3D%3D"
+  >
+  <img class="maps-link-icon" src="ubi2.png" alt="">
+    <span class="maps-link-text">Cómo llegar</span>
+  </a>
+</div>
+      </div>
+    </div>
+		</section>
+	<!--	<div class="separator">
+			<div class="line"></div>
+		</div> -->
+		<!-- 4) TRANSPORTE + FAQ -->
+		<section class="section paper" id="transport">
+  <div class="container">
+    <h2 class="title font-display">Transporte</h2>
+    <p class="subtitle font-body">Bus de ida y vuelta</p>
+
+    <div class="transport-card">
+      <div class="transport-block">
+        <h3 class="transport-block-title">Bus de ida</h3>
+        <p class="transport-note">Habrá servicio de autobús con las siguientes paradas:</p>
+
+        <div class="transport-stop">
+          <div class="transport-stop-head">
+            <span class="transport-stop-name">Jódar</span>
+            <span class="transport-stop-time">XX:XX h</span>
+          </div>
+          <p class="transport-stop-address">Dirección de la parada de Jódar</p>
+          <a class="maps-link" target="_blank" rel="noopener noreferrer" href="#">
+            <img class="maps-link-icon" src="ubi2.png" alt="">
+            <span class="maps-link-text">Abrir en Maps</span>
+          </a>
+        </div>
+
+        <div class="transport-stop">
+          <div class="transport-stop-head">
+            <span class="transport-stop-name">Úbeda</span>
+            <span class="transport-stop-time">XX:XX h</span>
+          </div>
+          <p class="transport-stop-address">Dirección de la parada de Úbeda</p>
+          <a class="maps-link" target="_blank" rel="noopener noreferrer" href="#">
+            <img class="maps-link-icon" src="ubi2.png" alt="">
+            <span class="maps-link-text">Abrir en Maps</span>
+          </a>
+        </div>
+
+        <div class="transport-stop transport-stop-last">
+          <div class="transport-stop-head">
+            <span class="transport-stop-name">Baeza</span>
+            <span class="transport-stop-time">XX:XX h</span>
+          </div>
+          <p class="transport-stop-address">Dirección de la parada de Baeza</p>
+          <a class="maps-link" target="_blank" rel="noopener noreferrer" href="#">
+            <img class="maps-link-icon" src="ubi2.png" alt="">
+            <span class="maps-link-text">Abrir en Maps</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="line transport-line"></div>
+
+      <div class="transport-block">
+        <h3 class="transport-block-title">Bus de vuelta</h3>
+        <p class="transport-note">Ambos turnos de regreso saldrán desde la finca.</p>
+
+        <div class="transport-return-list">
+          <div class="transport-return-item">
+            <span class="transport-return-label">Primer turno</span>
+            <span class="transport-return-time">XX:XX h</span>
+          </div>
+
+          <div class="transport-return-item">
+            <span class="transport-return-label">Segundo turno</span>
+            <span class="transport-return-time">XX:XX h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- 4) TRANSPORTE + FAQ -->
+     <section class="section paper" id="faq">
+  <div class="container">
+    <h2 class="title font-display">Preguntas frecuentes</h2>
+    <p class="subtitle font-body">Información útil para el gran día</p>
+
+    <div class="info-card faq-card">
+      <div class="faq-list">
+        <details>
+          <summary>¿Hay parking?</summary>
+          <p>Sí, habrá zona de aparcamiento en la finca (avisadme si tengo que cambiar la respuesta).</p>
+        </details>
+
+        <details>
+          <summary>¿Código de vestimenta?</summary>
+          <p>lo que me digáis ponemos aqui</p>
+        </details>
+
+        <details>
+          <summary>¿Puedo llevar acompañante?</summary>
+          <p>lo que me digáis ponemos aqui</p>
+        </details>
+
+        <details>
+          <summary>¿Alergias o intolerancias?</summary>
+          <p>Indícalo en el RSVP (sin gluten, lactosa, vegetariano, etc.).</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+		
+
+
+
+
+	<!-- 	<div class="separator">
+			<img src="assets/bow.png" alt="" /> 
+		</div> -->
+		<!-- 5) PREBODA -->
+		<section class="section prewedding-wrap" id="prewedding">
+			<div class="container">
+				<p class="subtitle font-body prewedding-subtitle">Preboda</p>
+				<h2 class="title font-display prewedding-title">Ven a saludar…</h2>
+				<p class="subtitle font-body prewedding-text">
+					TEXTO QUE QUERÁIS PONER AQUÍ. DUDA: ¿PONGO SOLO LA UBICACIÓN (CON REDIRECCIÓN A MAPS), O TAMBIÉN QUERÉIS QUE SALGA EL MAPA COMO DE LA FINCA?
+				</p>
+				<div class="pre-grid">
+					<article class="pre-item">
+						<img src="assets/pre-1.png" alt="" class="pre-icon" />
+						<h3 class="font-display">Preboda</h3>
+						<p class="meta font-body">Viernes 19 junio 2026</p>
+						<p class="meta font-body">20:30</p>
+						<p class="place font-body">Lugar por confirmar</p>
+						<div class="pre-actions">
+							<a class="btn" href="#" target="_blank" rel="noopener noreferrer">Mapa</a>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+		<div class="separator">
+			<img src="assets/cupid.png" alt="" /> <!-- <-- cambia o quita -->
+		</div>
+		<!-- 6) RSVP -->
+		<section class="section rsvp-wrap" id="rsvp">
+  <div class="container">
+    <h2 class="title font-display rsvp-title">RSVP</h2>
+    <p class="subtitle font-body">Confirma tu asistencia <br>antes de día X de mayo</p>
+
+    <div class="card inner rsvp-card">
+      <form id="rsvpForm">
+        <div>
+          <label>¿Asistirás? *</label>
+          <div class="radios">
+            <label class="radio">
+              <input type="radio" name="attend" value="Sí, asistiré" checked>
+              <span class="dot-radio" aria-hidden="true"></span>
+              <span>Sí, asistiré</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="attend" value="No podré asistir">
+              <span class="dot-radio" aria-hidden="true"></span>
+              <span>No podré asistir</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="grid2">
+          <label>
+            Nombre y apellidos *
+            <input name="fullName" required />
+          </label>
+        </div>
+
+        <label>
+  Teléfono *
+  <input
+    name="phone"
+    id="phoneInput"
+    type="tel"
+    inputmode="numeric"
+    autocomplete="tel"
+    maxlength="9"
+    required
+    pattern="[0-9]{9}"
+    placeholder="Ej. 600123123"
+  />
+</label>
+
+        <div class="grid2">
+          <label>
+            Nº de invitados (incluyéndote)
+            <select name="guests" id="guestsSelect">
+              <option value="0">0</option>
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+            </select>
+          </label>
+
+          <label>
+            ¿Necesitas autobús?
+            <select name="bus" id="busSelect">
+              <option value="No" selected>No</option>
+              <option value="Sí">Sí</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="bus-stop-group" id="busStopGroup" hidden>
+          <label>¿En qué parada cogerás el bus?</label>
+          <div class="radios">
+            <label class="radio">
+              <input type="radio" name="busStop" value="Jódar">
+              <span class="dot-radio" aria-hidden="true"></span>
+              <span>Jódar</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="busStop" value="Úbeda">
+              <span class="dot-radio" aria-hidden="true"></span>
+              <span>Úbeda</span>
+            </label>
+
+            <label class="radio">
+              <input type="radio" name="busStop" value="Baeza">
+              <span class="dot-radio" aria-hidden="true"></span>
+              <span>Baeza</span>
+            </label>
+          </div>
+        </div>
+
+        <label>
+          Alergias / intolerancias / dietas específicas
+          <input name="diet" placeholder="sin gluten, sin lactosa, vegetariano…" />
+        </label>
+
+        <label>
+          ¿Qué canción no puede faltar en la fiesta?
+          <input name="song" placeholder="Ej. Freed from Desire…" />
+        </label>
+
+        <label>
+          Un mensaje para los novios
+          <textarea name="message" placeholder="Escribe aquí…"></textarea>
+        </label>
+
+        <button class="btn primary btn-block" type="submit">
+          Enviar RSVP
+        </button>
+        <div class="result" id="result"></div>
+      </form>
+    </div>
+  </div>
+</section>
+		<!-- Botón arriba -->
+		<button class="fab" id="fab" aria-label="Subir arriba">↑</button>
+
+<!-- 7) PIE DE PÁGINA -->
+<section class="closing-signature">
+  <div class="closing-signature-line"></div>
+  <img src="logo-fecha.png" alt="Inma y Miquel" class="closing-signature-logo">
+</section>
+
+
+		<script>
+			/***************
+			 * COUNTDOWN
+			 ***************/
+			const eventISO = "2026-06-20T19:30:00";
+			const target = new Date(eventISO).getTime();
+			
+			const $d = document.getElementById("cdDays");
+			const $h = document.getElementById("cdHours");
+			const $m = document.getElementById("cdMins");
+			
+			function pad2(n) {
+			  return String(n).padStart(2, "0");
+			}
+			
+			function tick() {
+			  const now = Date.now();
+			  let diff = Math.max(0, target - now);
+			
+			  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+			  diff -= days * (1000 * 60 * 60 * 24);
+			
+			  const hours = Math.floor(diff / (1000 * 60 * 60));
+			  diff -= hours * (1000 * 60 * 60);
+			
+			  const mins = Math.floor(diff / (1000 * 60));
+			
+			  $d.textContent = days;
+			  $h.textContent = pad2(hours);
+			  $m.textContent = pad2(mins);
+			}
+			
+			tick();
+			setInterval(tick, 1000);
+			
+			/***************
+			 * SCROLL CTA HERO
+			 ***************/
+			document.getElementById("heroScroll").addEventListener("click", () => {
+			  document.getElementById("rsvp").scrollIntoView({
+			    behavior: "smooth",
+			    block: "start"
+			  });
+			});
+			
+			/***************
+			 * FAB (arriba)
+			 ***************/
+			const fab = document.getElementById("fab");
+			
+			window.addEventListener("scroll", () => {
+			  fab.classList.toggle("show", window.scrollY > 600);
+			});
+			
+			fab.addEventListener("click", () => {
+			  document.getElementById("top").scrollIntoView({
+			    behavior: "smooth"
+			  });
+			});
+			
+/***************
+   * RSVP + Google Sheets
+   ***************/
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNHE-6EJU9YdX0pJqAj49vP93o3aijog9lcECHbxm9akYLGmuJfjvyDx1PyeQJVxZ9mA/exec";
+
+  const form = document.getElementById("rsvpForm");
+  const result = document.getElementById("result");
+
+  const attendInputs = form.querySelectorAll('input[name="attend"]');
+  const guestsSelect = document.getElementById("guestsSelect");
+  const busSelect = document.getElementById("busSelect");
+  const busStopGroup = document.getElementById("busStopGroup");
+  const busStopInputs = form.querySelectorAll('input[name="busStop"]');
+
+  const fullNameInput = form.querySelector('input[name="fullName"]');
+  const phoneInput = form.querySelector('input[name="phone"]');
+  const dietInput = form.querySelector('input[name="diet"]');
+  const songInput = form.querySelector('input[name="song"]');
+  const messageInput = form.querySelector('textarea[name="message"]');
+
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  function getSelectedAttend() {
+    const checked = form.querySelector('input[name="attend"]:checked');
+    return checked ? checked.value : "";
+  }
+
+  function isAttending() {
+    return getSelectedAttend() === "Sí, asistiré";
+  }
+
+  function getSelectedBusStop() {
+    const checked = form.querySelector('input[name="busStop"]:checked');
+    return checked ? checked.value : "";
+  }
+
+  function toggleBusStop() {
+    const showBusStop = isAttending() && busSelect.value === "Sí";
+
+    busStopGroup.hidden = !showBusStop;
+
+    busStopInputs.forEach((input) => {
+      input.disabled = !showBusStop;
+
+      if (!showBusStop) {
+        input.checked = false;
+      }
+    });
+  }
+
+  function toggleAttendanceFields() {
+    const attending = isAttending();
+
+    if (!attending) {
+      guestsSelect.value = "0";
+      guestsSelect.disabled = true;
+
+      busSelect.value = "No";
+      busSelect.disabled = true;
+
+      dietInput.value = "";
+      dietInput.disabled = true;
+
+      songInput.value = "";
+      songInput.disabled = true;
+
+      fullNameInput.disabled = false;
+      phoneInput.disabled = false;
+      messageInput.disabled = false;
+    } else {
+      guestsSelect.disabled = false;
+      busSelect.disabled = false;
+      dietInput.disabled = false;
+      songInput.disabled = false;
+
+      if (guestsSelect.value === "0") {
+        guestsSelect.value = "1";
+      }
+    }
+
+    toggleBusStop();
+  }
+
+  function getFormData() {
+    return {
+      attend: getSelectedAttend(),
+      fullName: fullNameInput.value.trim(),
+      phone: phoneInput.value.trim(),
+      guests: guestsSelect.value,
+      bus: busSelect.value,
+      busStop: busSelect.value === "Sí" ? getSelectedBusStop() : "",
+      diet: dietInput.value.trim(),
+      song: songInput.value.trim(),
+      message: messageInput.value.trim()
+    };
+  }
+
+  function validateForm(data) {
+    if (!data.fullName) {
+      return "Por favor, indica tu nombre y apellidos.";
+    }
+
+    if (!/^\d{9}$/.test(data.phone)) {
+      return "Por favor, indica un teléfono válido de 9 números.";
+    }
+
+    if (data.attend === "Sí, asistiré" && data.bus === "Sí" && !data.busStop) {
+      return "Por favor, indica en qué parada cogerás el autobús.";
+    }
+
+    return "";
+  }
+
+  function showResult(message, isError = false) {
+    result.style.display = "block";
+    result.textContent = message;
+    result.classList.toggle("is-error", isError);
+    result.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest"
+    });
+  }
+
+  phoneInput.addEventListener("input", () => {
+    phoneInput.setCustomValidity("");
+    phoneInput.value = phoneInput.value.replace(/\D/g, "").slice(0, 9);
+  });
+
+  phoneInput.addEventListener("invalid", () => {
+    phoneInput.setCustomValidity("Introduce un teléfono de 9 números.");
+  });
+
+  attendInputs.forEach((input) => {
+    input.addEventListener("change", toggleAttendanceFields);
+  });
+
+  busSelect.addEventListener("change", toggleBusStop);
+
+  toggleAttendanceFields();
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = getFormData();
+    const error = validateForm(data);
+
+    if (error) {
+      showResult(error, true);
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Enviando...";
+
+    try {
+      const response = await fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=utf-8"
+        },
+        body: JSON.stringify(data)
+      });
+
+      const text = await response.text();
+      let json;
+
+      try {
+        json = JSON.parse(text);
+      } catch {
+        throw new Error(`Respuesta no válida del servidor: ${text.slice(0, 200)}`);
+      }
+
+      if (!json.ok) {
+        throw new Error(json.message || "No se pudo guardar el RSVP.");
+      }
+
+      showResult(json.message || "¡Gracias! Tu confirmación se ha enviado correctamente.");
+
+      form.reset();
+
+      const firstAttend = form.querySelector('input[name="attend"][value="Sí, asistiré"]');
+      if (firstAttend) firstAttend.checked = true;
+
+      guestsSelect.value = "1";
+      busSelect.value = "No";
+      phoneInput.setCustomValidity("");
+
+      toggleAttendanceFields();
+
+    } catch (error) {
+      showResult(`Error: ${error.message}`, true);
+      console.error(error);
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Enviar RSVP";
+    }
+  });
+</script>
+	</body>
+</html>
+
+<!-- 
+https://script.google.com/macros/s/AKfycbxNHE-6EJU9YdX0pJqAj49vP93o3aijog9lcECHbxm9akYLGmuJfjvyDx1PyeQJVxZ9mA/exec
+ -->
